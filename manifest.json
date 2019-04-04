@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Damfo App",
+  "version": "1.0",
+
+  "description": "Downloader",
+
+  "icons": {
+    "48": "icons/48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*"],
+      "js": ["damfo_app.js"]
+    }
+  ]
+
+}
