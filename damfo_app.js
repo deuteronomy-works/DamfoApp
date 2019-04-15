@@ -36,10 +36,43 @@ function getOldTwitImages() {
     for (let i=0; i<all_image.length; i++) {
         if (all_image[i].parentElement.classList.contains('js-adaptive-photo')) {
             all_image[i].parentElement.style.border = "1px solid chocolate";
-            alert(all_image[i].src);
+            //addDownloaderIcon(all_image[i]);
+
+            var img_url = browser.extension.getURL('icons/download-36.png');
+
+            // creat image ele
+            var img_ele = document.createElement('img');
+            img_ele.setAttribute('src', img_url);
+            img_ele.setAttribute('style', 'position: absolute');
+            img_ele.setAttribute('style', 'width: 36px');
+            img_ele.setAttribute('style', 'height: 36px');
+            img_ele.setAttribute('style', 'topMargin: 0px');
+
+            // append child
+            all_image[i].parentElement.parentElement.style.positon = "relative";
+            all_image[i].parentElement.appendChild(img_ele);
+
+            //alert(all_image[i].src);
         }
     }
     alert(content_images.length);
     //alert(all_image[4].parentElement.classList.contains('js-adaptive-photo'));
 
+}
+
+function addDownloaderIcon(i) {
+    // get the url of the download icon
+    var img_url = browser.extension.getURL('icons/download-36.png');
+
+    // creat image ele
+    var img_ele = document.createElement('img');
+    img_ele.setAttribute('src', img_url);
+    img_ele.setAttribute('style', 'position: absolute');
+    img_ele.setAttribute('style', 'width: 36px');
+    img_ele.setAttribute('style', 'height: 36px');
+    img_ele.setAttribute('style', 'topMargin: 0px');
+
+    // append child
+    i.parentElement.parentElement.style.positon = "relative";
+    i.parentElement.appendChild(img_ele);
 }

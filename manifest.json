@@ -14,6 +14,11 @@
       "matches": ["http://localhost/*"],
       "js": ["damfo_app.js"]
     }
+  ],
+
+  "web_accessible_resources": [
+    "icons/download-36.png",
+    "icons/download-48.png"
   ]
 
 }
